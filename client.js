@@ -5,6 +5,7 @@ $(document).ready(salaryCalcApp);
 function salaryCalcApp() {
   // Event Listeners
   $('.submit-button').on('click', createEmployee);
+  $('.employee-table-body').on('click', '.delete-button', deleteRow);
 
   function createEmployee() {
     // Define the input fields
@@ -27,6 +28,7 @@ function salaryCalcApp() {
     $row.append('<td>' + $idNumber + '</td>');
     $row.append('<td>' + $title + '</td>');
     $row.append('<td class="annual-salary">' + $salary + '</td>');
+    $row.append('<button class="delete-button">Delete</button>');
 
     $('.employee-table-body').prepend($row);
 
@@ -37,8 +39,7 @@ function salaryCalcApp() {
     title.val('');
     salary.val('');
 
-    // TOTAL SALARY CALCS
-
+    // CALCULATIONS
     // Get the total of all employee salaries (TOTAL ANNUAL)
     var salaryTotal = 0;
     $('.annual-salary').each(function() {
@@ -73,12 +74,19 @@ function salaryCalcApp() {
 
   }
 
+  // HARD MODE
+  // Delete button removes employee from DOM
+
+  // Add event listener above
+  // Function to delete the clicked row
+
+  function deleteRow() {
+    $(this).parents('tr').remove();
+  }
 
 } // end salaryCalcApp
 
 
-// HARD MODE
-// Delete button removes employee from DOM
 
 
 // PRO MODE
