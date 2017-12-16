@@ -1,14 +1,80 @@
 console.log('client.js is sourced');
 
-// Submit button takes the input values
+$(document).ready(salaryCalcApp);
 
-// Add Salaries to report monthly costs
+function salaryCalcApp() {
+  // Event Listeners
+  $('.submit-button').on('click', createEmployee);
 
-// Append values to DOM
+  function createEmployee() {
+    // Define the input fields
+    var firstName = $('.input-field-fName');
+    var lastName = $('.input-field-lName');
+    var idNumber = $('.input-field-id');
+    var title = $('.input-field-title');
+    var salary = $('.input-field-salary');
 
-// Clear values from input fields
+    // get the values from the inputs
+    var $firstName = $('.input-field-fName').val();
+    var $lastName = $('.input-field-lName').val();
+    var $idNumber = $('.input-field-id').val();
+    var $title = $('.input-field-title').val();
+    var $salary = $('.input-field-salary').val();
 
-// Calculate monthly costs and append to DOM
+    // Append values to DOM
+    $row = $('<tr class="employee-row">');
+    $row.append('<td>' + $firstName + ' ' + $lastName + '</td>');
+    $row.append('<td>' + $idNumber + '</td>');
+    $row.append('<td>' + $title + '</td>');
+    $row.append('<td class="annual-salary">' + $salary + '</td>');
+
+    $('.employee-table-body').prepend($row);
+
+    // Clear input fields
+    firstName.val('');
+    lastName.val('');
+    idNumber.val('');
+    title.val('');
+    salary.val('');
+
+    // TOTAL SALARY CALCS
+
+    // Get the total of all employee salaries (TOTAL ANNUAL)
+    var salaryTotal = 0;
+    $('.annual-salary').each(function() {
+      var salaryItem = Number($(this).text());
+      salaryTotal += salaryItem;
+    });
+
+    // Get the count of employees
+    var employeeCount = $('.annual-salary').length;
+
+    // Calculate the total salaries divided by employee length and remove decimals
+    var averageMonthlySalary = ((salaryTotal/employeeCount)/12).toFixed(0);
+
+    // append to end of table
+    $('.monthly-total').text((salaryTotal/12).toFixed(0));
+    $('.annual-total').text(salaryTotal);
+    $('.average-total').text(averageMonthlySalary);
+
+    //
+    // // Create the Employee class
+    // class Employee {
+    //   constructor() {
+    //     this.firstName = $firstName;
+    //     this.lastName = $lastName;
+    //     this.idNumber = $idNumber;
+    //     this.jobTitle = $jobTitle;
+    //     this.annualSalary = $annualSalary;
+    //   }
+    // }
+    //
+
+
+  }
+
+
+} // end salaryCalcApp
 
 
 // HARD MODE

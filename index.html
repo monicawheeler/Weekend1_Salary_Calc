@@ -13,14 +13,16 @@
     </header>
     <main>
       <ul class="employee-form">
-        <li><input placeholder="First Name" type="text" /></li>
-        <li><input placeholder="Last Name" type="text" /></li>
-        <li><input placeholder="Employee ID" type="text" /></li>
-        <li><input placeholder="Job Title" type="text" /></li>
-        <li><input placeholder="Annual Salary" type="number" /></li>
+        <li><input class="input-field input-field-fName" placeholder="First Name" type="text" /></li>
+        <li><input class="input-field input-field-lName" placeholder="Last Name" type="text" /></li>
+        <li><input class="input-field input-field-id" placeholder="Employee ID" type="text" /></li>
+        <li><input class="input-field input-field-title" placeholder="Job Title" type="text" /></li>
+        <li><input class="input-field input-field-salary" placeholder="Annual Salary" type="number" /></li>
       </ul>
+      <button class="submit-button">Submit Employee</button>
+      <h2>Employee Table</h2>
       <table class="employee-table">
-        <thead>
+        <thead class="employee-table-head">
           <tr>
             <th>Employee</th>
             <th>Employee ID</th>
@@ -28,8 +30,24 @@
             <th>Annual Salary</th>
           </tr>
         </thead>
+        <tbody class="employee-table-body">
+        </tbody>
+      </table>
+      <h2>Totals</h2>
+      <table class="totals-table">
+        <thead>
+          <tr>
+            <th>Total Monthly</th>
+            <th>Annual Total</th>
+            <th>Average Monthly Per Employee</td>
+          </tr>
+        </thead>
         <tbody>
-          <tr><td>test</td><td>test</td><td>test</td><td>test</td></tr>
+          <tr>
+            <td class="monthly-total"></td>
+            <td class="annual-total"></td>
+            <td class="average-total"></td>
+          </tr>
         </tbody>
       </table>
     </main>
