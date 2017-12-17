@@ -7,6 +7,13 @@ function salaryCalcApp() {
   $('.submit-button').on('click', createEmployee);
   $('.employee-table-body').on('click', '.delete-button', deleteRow);
 
+  // Allow for enter to create employee
+  $('input').keypress(function(e){
+    if(e.which==13) {
+      createEmployee();
+    }
+  });
+
   function createEmployee() {
     // Define the input fields
     var firstName = $('.input-field-fName');

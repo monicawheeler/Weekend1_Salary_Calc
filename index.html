@@ -2,7 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Employee Salary Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="main.css">
     <script src="jquery-3.2.1.min.js" charset="utf-8"></script>
     <script src="client.js" charset="utf-8"></script>
@@ -20,8 +22,9 @@
         <li><input class="input-field input-field-salary" placeholder="Annual Salary" type="number" /></li>
       </ul>
       <button class="submit-button">Submit Employee</button>
-      <h2>Employee Table</h2>
-      <table class="employee-table">
+      <div class="table-container">
+        <h2>Employee Table</h2>
+        <table class="employee-table">
         <thead class="employee-table-head">
           <tr>
             <th>Employee</th>
@@ -34,8 +37,10 @@
         <tbody class="employee-table-body">
         </tbody>
       </table>
-      <h2>Totals</h2>
-      <table class="totals-table">
+      </div>
+      <div class="table-container">
+        <h2>Totals</h2>
+        <table class="totals-table">
         <thead>
           <tr>
             <th>Total Monthly</th>
@@ -51,6 +56,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
     </main>
   </body>
 </html>
