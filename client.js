@@ -7,7 +7,7 @@ function salaryCalcApp() {
   $('.submit-button').on('click', createEmployee);
   $('.employee-table-body').on('click', '.delete-button', deleteRow);
 
-  // Allow for enter to create employee
+  // Allow for enter key to submit to create employee
   $('input').keypress(function(e){
     if(e.which==13) {
       createEmployee();
@@ -23,18 +23,18 @@ function salaryCalcApp() {
     var salary = $('.input-field-salary');
 
     // get the values from the inputs
-    var $firstName = $('.input-field-fName').val();
-    var $lastName = $('.input-field-lName').val();
-    var $idNumber = $('.input-field-id').val();
-    var $title = $('.input-field-title').val();
-    var $salary = $('.input-field-salary').val();
+    var $firstNameVal = firstName.val();
+    var $lastNameVal = lastName.val();
+    var $idNumberVal = idNumber.val();
+    var $titleVal = title.val();
+    var $salaryVal = salary.val();
 
     // Append values to DOM
     $row = $('<tr class="employee-row">');
-    $row.append('<td>' + $firstName + ' ' + $lastName + '</td>');
-    $row.append('<td>' + $idNumber + '</td>');
-    $row.append('<td>' + $title + '</td>');
-    $row.append('<td class="annual-salary">' + $salary + '</td>');
+    $row.append('<td>' + $firstNameVal + ' ' + $lastNameVal + '</td>');
+    $row.append('<td>' + $idNumberVal + '</td>');
+    $row.append('<td>' + $titleVal + '</td>');
+    $row.append('<td class="annual-salary">' + $salaryVal + '</td>');
     $row.append('<button class="delete-button">Delete</button>');
 
     $('.employee-table-body').prepend($row);
@@ -84,7 +84,7 @@ function salaryCalcApp() {
   // HARD MODE
   // Delete button removes employee from DOM
 
-  // Add event listener above
+  // Added event listener above
   // Function to delete the clicked row
 
   function deleteRow() {

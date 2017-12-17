@@ -100,3 +100,13 @@ button {
   margin: 10px 0;
   font-size: 10px;
 }
+
+.annual-salary:before {
+  content: "$";
+}
+
+.annual-total:before,
+.monthly-total:before,
+.average-total:before {
+  content: "$";
+}
