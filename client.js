@@ -64,21 +64,6 @@ function salaryCalcApp() {
     $('.monthly-total').text((salaryTotal/12).toFixed(0));
     $('.annual-total').text(salaryTotal);
     $('.average-total').text(averageMonthlySalary);
-
-    //
-    // // Create the Employee class
-    // class Employee {
-    //   constructor() {
-    //     this.firstName = $firstName;
-    //     this.lastName = $lastName;
-    //     this.idNumber = $idNumber;
-    //     this.jobTitle = $jobTitle;
-    //     this.annualSalary = $annualSalary;
-    //   }
-    // }
-    //
-
-
   }
 
   // HARD MODE
