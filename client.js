@@ -71,7 +71,6 @@ function salaryCalcApp() {
 
   // Added event listener above
   // Function to delete the clicked row
-
   function deleteRow() {
     $(this).parents('tr').remove();
   }
