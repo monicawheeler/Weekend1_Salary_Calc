@@ -1,5 +1,4 @@
 html, body {
-  height: 100%;
   width: 100%;
 }
 
@@ -17,7 +16,13 @@ body:after {
   left: 0;
   height: 100%;
   width: 100%;
+  min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.85);
+}
+
+body {
+  position: relative;
+  height: 100%;
 }
 
 body > * {
